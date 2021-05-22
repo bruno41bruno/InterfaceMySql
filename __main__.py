@@ -8,6 +8,7 @@ cursor = "cursor"
 moeda_orig = 0
 moeda_dest = 0
 cambio = 10
+operacao = "nenhuma"
 
 #22/05/2021
 brl_eur = 0.15350
@@ -24,10 +25,6 @@ gbp_usd = 1.41500
 gbp_eur = 1.16160
 
 
-def chose_cliente():
-    cliente = Formulario.cliente_3.text()
-    #FeedBack
-    print("Cliente",cliente)
 
 def formulario_Janela_Aba1():
     Formulario.W_formulario.close()
@@ -48,9 +45,13 @@ def calendario():
     Calendario.show()
 
 def add_dados():
-    dados = Tabela.line_t.text()
+    dados = Tabela.line_t_tabela.text()
     Tabela.table_list.addItem(dados)
-    Tabela.line_t.setText("")
+    Tabela.line_t_tabela.setText("")
+    cliente = Tabela.line_t_cliente.text()
+    Tabela.table_list.addItem(cliente)
+    Tabela.line_t_cliente.setText("")
+    cursor.execute("CREATE TABLE {dados} ({cliente} text,{operacao} text,{total_convert} text, {total_camb} text, {data_formatada} text)")
 
 def delete_dados_table():
     Tabela.table_list.takeItem(Tabela.table_list.currentRow())
@@ -151,10 +152,9 @@ def calculadora():
         "Resultado Total: "+str(round(result_final,2)))
     Formulario.convert_calculo.setText(
         "Conversão Total: "+str(round(total_convert,2)))
+    global operacao
+    operacao = moeda_orig+"para"+moeda_dest
 
-def save_all():
-    #FeedBack
-    print("saved!")
 
 def cot_change():
     m_orig_m = Cotacao.combo_orig_m.currentText()
@@ -237,28 +237,37 @@ def cot_view():
     (Cotacao.brl_m_dest.setChecked(False))
 
 def pegar_data():
-    date = str(Formulario.data.selectedDate())
+    date = str(Calendario.datinha_c.selectedDate())
     data_formatada = date[19:30]
     print(data_formatada)
 #banco de dados
 def database_controll():
     #criar
+    global banco
     banco_db = banco
+    global cursor
     cursor_db = cursor
     database = Formulario.bd1_f.text()
-    #cursor = banco.cursor()
+    cursor = banco.cursor()
     if database == "":
         QMessageBox.about(Formulario,
         "Erro!!!",
         "Digite um nome para o banco de Dados   "
         )
     else:
-        #banco = sqlite3.connect(database+".db")
+        banco = sqlite3.connect(database+".db")
         print(database+".db")
         QMessageBox.about(Formulario,
         "Criação concluída!",
         "       Banco de Dados"+database+".db         "
         )
+def salvar_tudo():
+    banco.commit()
+
+def filtro():
+    cursor.execute("SELECT * FROM {dados}")
+    print(cursor.fetchall())
+    print("funfei")
 
 app=QtWidgets.QApplication([])
 Formulario=uic.loadUi("Formulario.ui")
@@ -266,7 +275,8 @@ Tabela=uic.loadUi("Tabela.ui")
 Cotacao=uic.loadUi("Cotacao.ui")
 Calendario=uic.loadUi("Calendario.ui")
 #botões
-Formulario.next_Janela_3.clicked.connect(chose_cliente)
+
+Calendario.datinha_c.selectionChanged.connect(pegar_data)
 Formulario.next_Janela_3.clicked.connect(formulario_Janela_Aba1)
 Formulario.back_janela_2.clicked.connect(formulario_Janela_Aba2)
 Formulario.save_moeda_3.clicked.connect(choose_save_moeda)
@@ -275,13 +285,14 @@ Formulario.window_moeda_3.clicked.connect(cotacao_config)
 Formulario.calcular_cal.clicked.connect(calculadora)
 Formulario.create_db.triggered.connect(database_controll)
 Formulario.calen_b.clicked.connect(calendario)
-Calendario.data.selectionChanged.connect(pegar_data)
 Cotacao.verific_m.clicked.connect(cot_view)
 Cotacao.next_janela_m.clicked.connect(cot_janela_Aba1)
 Cotacao.back_janela1_m.clicked.connect(cot_janela_Aba2)
 Cotacao.save_cot_m.clicked.connect(cot_change)
-Tabela.add_t.clicked.connect(add_dados)
+Tabela.add_table_t.clicked.connect(add_dados)
 Tabela.clear_t.clicked.connect(delete_dados_table)
+Tabela.actionSalvar_no_Banco_de_Dados.triggered.connect(salvar_tudo)
+Tabela.filtrar_t.clicked.connect(filtro)
 
 #comboBox
 Formulario.combo_Orig_3.addItems(ml)
