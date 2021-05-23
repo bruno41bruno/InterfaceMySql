@@ -1,14 +1,12 @@
 from PyQt5 import uic,QtWidgets
+from data import date
 from PyQt5.QtWidgets import QMessageBox
-import sqlite3
 
+data_time = "Data: "+date
 ml = ["BRL","USD","EUR","GBP"]
-banco = "database"
-cursor = "cursor"
 moeda_orig = 0
 moeda_dest = 0
 cambio = 10
-operacao = "nenhuma"
 
 #22/05/2021
 brl_eur = 0.15350
@@ -23,8 +21,6 @@ eur_gbp = 0.86240
 gbp_brl = 7.5938
 gbp_usd = 1.41500
 gbp_eur = 1.16160
-
-
 
 def formulario_Janela_Aba1():
     Formulario.W_formulario.close()
@@ -41,17 +37,11 @@ def cot_janela_Aba2():
 def table_config():
     Tabela.show()
 
-def calendario():
-    Calendario.show()
+def table_list_dados():
+    print("lista")
 
-def add_dados():
-    dados = Tabela.line_t_tabela.text()
-    Tabela.table_list.addItem(dados)
-    Tabela.line_t_tabela.setText("")
-    cliente = Tabela.line_t_cliente.text()
-    Tabela.table_list.addItem(cliente)
-    Tabela.line_t_cliente.setText("")
-    cursor.execute("CREATE TABLE {dados} ({cliente} text,{operacao} text,{total_convert} text, {total_camb} text, {data_formatada} text)")
+def table_delete():
+    print("deletar")
 
 def delete_dados_table():
     Tabela.table_list.takeItem(Tabela.table_list.currentRow())
@@ -76,6 +66,9 @@ def calculadora():
     global moeda_orig
     global moeda_dest
     if moeda_orig == moeda_dest:
+        total_convert = 0
+        total_cambio = 0 
+        result_final = 0
         QMessageBox.about(Formulario,
         "Erro!!!",
         "  Uma das moedas deve ser diferente!    "
@@ -152,9 +145,6 @@ def calculadora():
         "Resultado Total: "+str(round(result_final,2)))
     Formulario.convert_calculo.setText(
         "Conversão Total: "+str(round(total_convert,2)))
-    global operacao
-    operacao = moeda_orig+"para"+moeda_dest
-
 
 def cot_change():
     m_orig_m = Cotacao.combo_orig_m.currentText()
@@ -236,63 +226,35 @@ def cot_view():
     (Cotacao.gbp_m_dest.setChecked(False))
     (Cotacao.brl_m_dest.setChecked(False))
 
-def pegar_data():
-    date = str(Calendario.datinha_c.selectedDate())
-    data_formatada = date[19:30]
-    print(data_formatada)
-#banco de dados
-def database_controll():
-    #criar
-    global banco
-    banco_db = banco
-    global cursor
-    cursor_db = cursor
-    database = Formulario.bd1_f.text()
-    cursor = banco.cursor()
-    if database == "":
-        QMessageBox.about(Formulario,
-        "Erro!!!",
-        "Digite um nome para o banco de Dados   "
-        )
-    else:
-        banco = sqlite3.connect(database+".db")
-        print(database+".db")
-        QMessageBox.about(Formulario,
-        "Criação concluída!",
-        "       Banco de Dados"+database+".db         "
-        )
-def salvar_tudo():
-    banco.commit()
-
-def filtro():
-    cursor.execute("SELECT * FROM {dados}")
-    print(cursor.fetchall())
-    print("funfei")
+def clean():
+    Formulario.total_camb_cal.setText("Total do Cambio: ")
+    Formulario.resultado_cal.setText("Resultado Total: ")
+    Formulario.convert_calculo.setText("Conversão Total: ")
+    Formulario.valor_cal.setText("")
 
 app=QtWidgets.QApplication([])
 Formulario=uic.loadUi("Formulario.ui")
 Tabela=uic.loadUi("Tabela.ui")
 Cotacao=uic.loadUi("Cotacao.ui")
-Calendario=uic.loadUi("Calendario.ui")
+#data
+Formulario.data.setText(data_time)
 #botões
-
-Calendario.datinha_c.selectionChanged.connect(pegar_data)
+Formulario.clear_all.clicked.connect(clean)
 Formulario.next_Janela_3.clicked.connect(formulario_Janela_Aba1)
 Formulario.back_janela_2.clicked.connect(formulario_Janela_Aba2)
 Formulario.save_moeda_3.clicked.connect(choose_save_moeda)
 Formulario.choose_table_3.clicked.connect(table_config)
 Formulario.window_moeda_3.clicked.connect(cotacao_config)
 Formulario.calcular_cal.clicked.connect(calculadora)
-Formulario.create_db.triggered.connect(database_controll)
-Formulario.calen_b.clicked.connect(calendario)
+#Formulario.create_db.triggered.connect(database_controll)
 Cotacao.verific_m.clicked.connect(cot_view)
 Cotacao.next_janela_m.clicked.connect(cot_janela_Aba1)
 Cotacao.back_janela1_m.clicked.connect(cot_janela_Aba2)
 Cotacao.save_cot_m.clicked.connect(cot_change)
-Tabela.add_table_t.clicked.connect(add_dados)
-Tabela.clear_t.clicked.connect(delete_dados_table)
-Tabela.actionSalvar_no_Banco_de_Dados.triggered.connect(salvar_tudo)
-Tabela.filtrar_t.clicked.connect(filtro)
+#Tabela.add_table_t.clicked.connect(add_dados)
+Tabela.delet_t.clicked.connect(table_delete)
+#Tabela.actionSalvar_no_Banco_de_Dados.triggered.connect(salvar_tudo)
+#Tabela.filtrar_t.clicked.connect(filtro)
 
 #comboBox
 Formulario.combo_Orig_3.addItems(ml)

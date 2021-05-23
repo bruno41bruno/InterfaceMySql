@@ -1,27 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>calen</class>
- <widget class="QMainWindow" name="calen">
+ <class>W_tabela</class>
+ <widget class="QMainWindow" name="W_tabela">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
-    <height>263</height>
+    <width>490</width>
+    <height>470</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QCalendarWidget" name="datinha_c">
+   <widget class="QListWidget" name="table_list">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>371</width>
-      <height>211</height>
+      <x>5</x>
+      <y>1</y>
+      <width>481</width>
+      <height>291</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_t">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>400</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Deletar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_t">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>310</y>
+      <width>221</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tabela:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_t_cliente">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>350</y>
+      <width>221</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cliente:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="filtrar_t">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>312</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filtrar</string>
     </property>
    </widget>
   </widget>
@@ -30,11 +112,23 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>434</width>
+     <width>490</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionSalvar_no_Banco_de_Dados"/>
+   </widget>
+   <addaction name="menuArquivo"/>
   </widget>
+  <action name="actionSalvar_no_Banco_de_Dados">
+   <property name="text">
+    <string>Salvar no Banco de Dados</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

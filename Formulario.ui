@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>472</width>
-    <height>376</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="font">
@@ -30,7 +30,7 @@
      <rect>
       <x>0</x>
       <y>10</y>
-      <width>471</width>
+      <width>461</width>
       <height>351</height>
      </rect>
     </property>
@@ -91,7 +91,7 @@
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>10</x>
         <y>0</y>
         <width>171</width>
         <height>16</height>
@@ -101,25 +101,10 @@
        <string>Configurações do Banco de Dados</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="cliente_3">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>60</y>
-        <width>221</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>160</x>
         <y>90</y>
         <width>121</width>
         <height>20</height>
@@ -145,24 +130,6 @@
       </property>
       <property name="text">
        <string>Próximo</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>60</y>
-        <width>101</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Nome do cliente:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_16">
@@ -272,31 +239,13 @@
        <string>Moedas</string>
       </property>
      </widget>
-     <widget class="QLabel" name="tabela">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>30</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Banco de Dados:</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="choose_table_3">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>60</y>
-        <width>91</width>
-        <height>23</height>
+        <x>30</x>
+        <y>50</y>
+        <width>171</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -407,21 +356,6 @@
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
-     <widget class="QLineEdit" name="bd1_f">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>30</y>
-        <width>221</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-     </widget>
      <widget class="Line" name="line_18">
       <property name="geometry">
        <rect>
@@ -433,19 +367,6 @@
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="calen_b">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>0</y>
-        <width>61</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Data</string>
       </property>
      </widget>
      <zorder>line</zorder>
@@ -466,14 +387,9 @@
      <zorder>label_12</zorder>
      <zorder>combo_Dest_3</zorder>
      <zorder>label_14</zorder>
-     <zorder>cliente_3</zorder>
      <zorder>line_18</zorder>
      <zorder>label_13</zorder>
      <zorder>choose_table_3</zorder>
-     <zorder>tabela</zorder>
-     <zorder>label_15</zorder>
-     <zorder>bd1_f</zorder>
-     <zorder>calen_b</zorder>
     </widget>
     <widget class="QPushButton" name="back_janela_2">
      <property name="geometry">
@@ -737,6 +653,24 @@
     <zorder>back_janela_2</zorder>
     <zorder>W_formulario</zorder>
    </widget>
+   <widget class="QLabel" name="data">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>10</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Data:</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -751,7 +685,6 @@
     <property name="title">
      <string>Arquivo</string>
     </property>
-    <addaction name="salve_all_3"/>
     <addaction name="create_db"/>
    </widget>
    <addaction name="menu_nicio_arq"/>

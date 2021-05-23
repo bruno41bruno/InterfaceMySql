@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>353</width>
-    <height>372</height>
+    <height>392</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -367,27 +367,14 @@
      <widget class="QPushButton" name="next_janela_m">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>100</y>
+        <x>90</x>
+        <y>90</y>
         <width>101</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
        <string>Alterar Cotação</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="save_perm_m">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>100</y>
-        <width>91</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Salvar Mudanças</string>
       </property>
      </widget>
      <widget class="QPushButton" name="verific_m">
@@ -497,6 +484,23 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <zorder>brl_m_orig</zorder>
+   <zorder>label</zorder>
+   <zorder>gbp_m_orig</zorder>
+   <zorder>usd_m_orig</zorder>
+   <zorder>eur_m_orig</zorder>
+   <zorder>eur_m_dest</zorder>
+   <zorder>brl_m_dest</zorder>
+   <zorder>usd_m_dest</zorder>
+   <zorder>gbp_m_dest</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>janela2_m</zorder>
+   <zorder>line_2</zorder>
+   <zorder>line_4</zorder>
+   <zorder>cot_atual_m</zorder>
+   <zorder>line_3</zorder>
+   <zorder>line</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
