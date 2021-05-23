@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>353</width>
+    <width>354</width>
     <height>392</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(228, 246, 255);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QCheckBox" name="brl_m_orig">
@@ -353,10 +353,13 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-10</y>
-       <width>321</width>
-       <height>131</height>
+       <y>0</y>
+       <width>311</width>
+       <height>121</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 252, 253);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -367,7 +370,7 @@
      <widget class="QPushButton" name="next_janela_m">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>100</x>
         <y>90</y>
         <width>101</width>
         <height>23</height>
@@ -380,8 +383,8 @@
      <widget class="QPushButton" name="verific_m">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>10</y>
+        <x>240</x>
+        <y>20</y>
         <width>61</width>
         <height>23</height>
        </rect>
@@ -507,7 +510,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>353</width>
+     <width>354</width>
      <height>21</height>
     </rect>
    </property>

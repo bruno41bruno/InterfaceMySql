@@ -14,8 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(222, 252, 255);
-background-color: rgb(240, 254, 255);</string>
+   <string notr="true">background-color: rgb(255, 253, 254);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QListWidget" name="table_list">
