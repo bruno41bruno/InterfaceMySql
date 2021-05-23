@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>472</width>
-    <height>416</height>
+    <width>473</width>
+    <height>380</height>
    </rect>
   </property>
   <property name="font">
@@ -41,12 +41,15 @@
      <enum>QFrame::Raised</enum>
     </property>
     <widget class="QFrame" name="W_formulario">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>471</width>
-       <height>281</height>
+       <width>461</width>
+       <height>351</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -59,7 +62,7 @@
       <property name="geometry">
        <rect>
         <x>260</x>
-        <y>140</y>
+        <y>130</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -77,7 +80,7 @@
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>140</y>
+        <y>130</y>
         <width>71</width>
         <height>22</height>
        </rect>
@@ -93,12 +96,12 @@
        <rect>
         <x>10</x>
         <y>0</y>
-        <width>171</width>
+        <width>71</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Configurações do Banco de Dados</string>
+       <string>Configurações </string>
       </property>
      </widget>
      <widget class="QLabel" name="label_14">
@@ -122,8 +125,8 @@
      <widget class="QPushButton" name="next_Janela_3">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>310</y>
+        <x>260</x>
+        <y>280</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -136,7 +139,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>140</y>
+        <y>130</y>
         <width>111</width>
         <height>21</height>
        </rect>
@@ -164,7 +167,7 @@
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>140</y>
+        <y>130</y>
         <width>71</width>
         <height>21</height>
        </rect>
@@ -179,7 +182,7 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>170</y>
+        <y>160</y>
         <width>131</width>
         <height>20</height>
        </rect>
@@ -192,7 +195,7 @@
       <property name="geometry">
        <rect>
         <x>300</x>
-        <y>170</y>
+        <y>160</y>
         <width>131</width>
         <height>20</height>
        </rect>
@@ -205,9 +208,9 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>230</y>
+        <y>190</y>
         <width>111</width>
-        <height>23</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="toolTip">
@@ -229,8 +232,8 @@
      <widget class="QPushButton" name="window_moeda_3">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>230</y>
+        <x>110</x>
+        <y>280</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -240,11 +243,14 @@
       </property>
      </widget>
      <widget class="QPushButton" name="choose_table_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>340</x>
         <y>50</y>
-        <width>171</width>
+        <width>111</width>
         <height>31</height>
        </rect>
       </property>
@@ -253,12 +259,15 @@
       </property>
      </widget>
      <widget class="Line" name="line">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>5</y>
+        <y>225</y>
         <width>451</width>
-        <height>241</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="orientation">
@@ -305,6 +314,9 @@
       </property>
      </widget>
      <widget class="Line" name="line_9">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -322,8 +334,8 @@
        <rect>
         <x>0</x>
         <y>120</y>
-        <width>20</width>
-        <height>141</height>
+        <width>16</width>
+        <height>101</height>
        </rect>
       </property>
       <property name="orientation">
@@ -334,26 +346,13 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>250</y>
+        <y>240</y>
         <width>451</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="Line" name="line_12">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>120</y>
-        <width>20</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
       </property>
      </widget>
      <widget class="Line" name="line_18">
@@ -369,27 +368,87 @@
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <zorder>line</zorder>
+     <widget class="QLineEdit" name="client_line">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>59</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cliente:</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_19">
+      <property name="geometry">
+       <rect>
+        <x>-5</x>
+        <y>250</y>
+        <width>31</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_41">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>451</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
      <zorder>line_3</zorder>
      <zorder>line_9</zorder>
      <zorder>line_2</zorder>
-     <zorder>line_11</zorder>
-     <zorder>orig_select_3</zorder>
-     <zorder>label_16</zorder>
-     <zorder>next_Janela_3</zorder>
-     <zorder>line_12</zorder>
      <zorder>line_10</zorder>
      <zorder>line_4</zorder>
-     <zorder>save_moeda_3</zorder>
+     <zorder>line_18</zorder>
+     <zorder>line</zorder>
+     <zorder>line_19</zorder>
+     <zorder>line_41</zorder>
+     <zorder>next_Janela_3</zorder>
+     <zorder>window_moeda_3</zorder>
+     <zorder>combo_Dest_3</zorder>
+     <zorder>choose_table_3</zorder>
+     <zorder>label_14</zorder>
+     <zorder>label_12</zorder>
      <zorder>dest_select_3</zorder>
      <zorder>combo_Orig_3</zorder>
-     <zorder>label_12</zorder>
-     <zorder>combo_Dest_3</zorder>
-     <zorder>label_14</zorder>
-     <zorder>line_18</zorder>
+     <zorder>label_16</zorder>
+     <zorder>orig_select_3</zorder>
+     <zorder>save_moeda_3</zorder>
+     <zorder>client_line</zorder>
+     <zorder>label</zorder>
      <zorder>label_13</zorder>
-     <zorder>window_moeda_3</zorder>
-     <zorder>choose_table_3</zorder>
+     <zorder>line_11</zorder>
     </widget>
     <widget class="QPushButton" name="back_janela_2">
      <property name="geometry">
@@ -425,7 +484,7 @@
     <widget class="QLabel" name="moeda_dest_cal">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>30</x>
        <y>120</y>
        <width>171</width>
        <height>20</height>
@@ -574,9 +633,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>290</y>
-       <width>451</width>
-       <height>131</height>
+       <y>200</y>
+       <width>441</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
@@ -600,7 +659,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
+       <y>0</y>
        <width>451</width>
        <height>16</height>
       </rect>
@@ -615,7 +674,7 @@
        <x>-7</x>
        <y>10</y>
        <width>31</width>
-       <height>291</height>
+       <height>181</height>
       </rect>
      </property>
      <property name="orientation">
@@ -625,9 +684,9 @@
     <widget class="Line" name="line_17">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>30</y>
-       <width>31</width>
+       <width>21</width>
        <height>271</height>
       </rect>
      </property>
@@ -635,6 +694,20 @@
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
+    <widget class="Line" name="line_42">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>210</y>
+       <width>16</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <zorder>back_janela_2</zorder>
     <zorder>clear_all</zorder>
     <zorder>line_14</zorder>
     <zorder>line_17</zorder>
@@ -651,13 +724,13 @@
     <zorder>total_camb_cal</zorder>
     <zorder>resultado_cal</zorder>
     <zorder>W_formulario</zorder>
-    <zorder>back_janela_2</zorder>
+    <zorder>line_42</zorder>
    </widget>
    <widget class="QLabel" name="data">
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>10</y>
+      <y>0</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -671,13 +744,43 @@
      <string>Data:</string>
     </property>
    </widget>
+   <widget class="Line" name="line_40">
+    <property name="geometry">
+     <rect>
+      <x>445</x>
+      <y>260</y>
+      <width>31</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_12">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>130</y>
+      <width>20</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <zorder>Aba_2</zorder>
+   <zorder>line_12</zorder>
+   <zorder>data</zorder>
+   <zorder>line_40</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>472</width>
+     <width>473</width>
      <height>21</height>
     </rect>
    </property>
@@ -685,7 +788,7 @@
     <property name="title">
      <string>Arquivo</string>
     </property>
-    <addaction name="create_db"/>
+    <addaction name="create_table"/>
    </widget>
    <addaction name="menu_nicio_arq"/>
   </widget>
@@ -694,9 +797,9 @@
     <string>Salvar Dados</string>
    </property>
   </action>
-  <action name="create_db">
+  <action name="create_table">
    <property name="text">
-    <string>Criar Banco Dados</string>
+    <string>Criar Tabela</string>
    </property>
   </action>
  </widget>
