@@ -145,6 +145,14 @@ def calculadora():
     Tabela.table_list.addItem("Taxa Cobrada: "+str(round(total_cambio,2)))
     Tabela.table_list.addItem("Valor Completo: "+str(round(result_final,2)))
 
+def salvar_dados():
+    dados = data_time+"Cliente:  Operação: "+str(moeda_dest)+ "to" +str(moeda_orig)+ " Valor Original:  Taxa Cobrada:  Valor Total: "
+
+    arquivo = QtWidgets.QFileDialoge.getSaveFileName()[0]
+
+    with open (arquivo + ".txt", "w") as arq:
+        arq.write(dados)
+
 def cot_change():
     m_orig_m = Cotacao.combo_orig_m.currentText()
     m_dest_m = Cotacao.combo_dest_m.currentText()
@@ -245,7 +253,7 @@ Formulario.save_moeda_3.clicked.connect(choose_save_moeda)
 Formulario.choose_table_3.clicked.connect(table_config)
 Formulario.window_moeda_3.clicked.connect(cotacao_config)
 Formulario.calcular_cal.clicked.connect(calculadora)
-#Formulario.create_db.triggered.connect(database_controll)
+Formulario.save.triggered.connect(salvar_dados)
 Cotacao.verific_m.clicked.connect(cot_view)
 Cotacao.next_janela_m.clicked.connect(cot_janela_Aba1)
 Cotacao.back_janela1_m.clicked.connect(cot_janela_Aba2)

@@ -68,6 +68,7 @@ background-color: rgb(240, 254, 255);</string>
     <property name="title">
      <string>Arquivo</string>
     </property>
+    <addaction name="save"/>
     <addaction name="actionSalvar_no_Banco_de_Dados"/>
    </widget>
    <addaction name="menuArquivo"/>
@@ -75,6 +76,11 @@ background-color: rgb(240, 254, 255);</string>
   <action name="actionSalvar_no_Banco_de_Dados">
    <property name="text">
     <string>Salvar no Banco de Dados</string>
+   </property>
+  </action>
+  <action name="save">
+   <property name="text">
+    <string>Salvar</string>
    </property>
   </action>
  </widget>
