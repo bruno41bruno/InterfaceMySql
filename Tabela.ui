@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>490</width>
-    <height>470</height>
+    <height>384</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(222, 252, 255);
+background-color: rgb(240, 254, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QListWidget" name="table_list">
@@ -28,7 +32,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>400</y>
+      <y>300</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -37,67 +41,11 @@
      <string>Deletar</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="line_t">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>310</y>
-      <width>221</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>310</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Tabela:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="line_t_cliente">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>350</y>
-      <width>221</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>350</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Cliente:</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="filtrar_t">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>312</y>
+      <x>100</x>
+      <y>300</y>
       <width>81</width>
       <height>31</height>
      </rect>

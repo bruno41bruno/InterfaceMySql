@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>472</width>
-    <height>382</height>
+    <height>385</height>
    </rect>
   </property>
   <property name="font">
@@ -46,7 +46,7 @@
        <x>0</x>
        <y>0</y>
        <width>471</width>
-       <height>341</height>
+       <height>351</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -396,7 +396,7 @@
       <rect>
        <x>40</x>
        <y>310</y>
-       <width>75</width>
+       <width>91</width>
        <height>23</height>
       </rect>
      </property>
@@ -542,7 +542,7 @@
     <widget class="QPushButton" name="clear_all">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>180</x>
        <y>310</y>
        <width>101</width>
        <height>23</height>
@@ -635,6 +635,20 @@
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
+    <widget class="QPushButton" name="add_table">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>310</y>
+       <width>101</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Listar na Tabela</string>
+     </property>
+    </widget>
+    <zorder>add_table</zorder>
     <zorder>line_14</zorder>
     <zorder>line_17</zorder>
     <zorder>line_16</zorder>

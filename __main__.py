@@ -37,13 +37,7 @@ def cot_janela_Aba2():
 def table_config():
     Tabela.show()
 
-def table_list_dados():
-    print("lista")
-
 def table_delete():
-    print("deletar")
-
-def delete_dados_table():
     Tabela.table_list.takeItem(Tabela.table_list.currentRow())
 
 def cotacao_config():
@@ -83,68 +77,73 @@ def calculadora():
         total_convert = brl_usd * valor
         global cambio
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[0] and moeda_dest == ml[2]:
         global brl_eur
         total_convert = brl_eur * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[0] and moeda_dest == ml[3]:
         global brl_gbp
         total_convert = brl_gbp * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[1] and moeda_dest == ml[0]:
         global usd_brl
         total_convert = usd_brl * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[1] and moeda_dest == ml[2]:
         global usd_eur
         total_convert = usd_eur * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[1] and moeda_dest == ml[3]:
         global usd_gbp
         total_convert = usd_gbp * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[2] and moeda_dest == ml[0]:
         global eur_brl
         total_convert = eur_brl * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[2] and moeda_dest == ml[1]:
         global eur_usd
         total_convert = eur_usd* valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[2] and moeda_dest == ml[3]:
         global eur_gbp
         total_convert = eur_gbp * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[3] and moeda_dest == ml[0]:
         global gbp_brl
         total_convert = gbp_brl * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[3] and moeda_dest == ml[1]:
         global gbp_usd
         total_convert = gbp_usd * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio
     elif moeda_orig == ml[3] and moeda_dest == ml[2]:
         global gbp_eur
         total_convert = gbp_eur * valor
         total_cambio = total_convert * cambio/100 
-        result_final = total_cambio + total_convert
+        result_final = total_convert - total_cambio 
     Formulario.total_camb_cal.setText(
         "Total do Cambio: "+str(round(total_cambio,2)))
     Formulario.resultado_cal.setText(
         "Resultado Total: "+str(round(result_final,2)))
     Formulario.convert_calculo.setText(
         "Conversão Total: "+str(round(total_convert,2)))
+    Tabela.table_list.addItem(data_time)
+    Tabela.table_list.addItem(str(moeda_dest)+" to "+str(moeda_orig))
+    Tabela.table_list.addItem("Valor Original: "+str(round(valor,2)))
+    Tabela.table_list.addItem("Taxa Cobrada: "+str(round(total_cambio,2)))
+    Tabela.table_list.addItem("Valor Completo: "+str(round(result_final,2)))
 
 def cot_change():
     m_orig_m = Cotacao.combo_orig_m.currentText()
@@ -251,8 +250,7 @@ Cotacao.verific_m.clicked.connect(cot_view)
 Cotacao.next_janela_m.clicked.connect(cot_janela_Aba1)
 Cotacao.back_janela1_m.clicked.connect(cot_janela_Aba2)
 Cotacao.save_cot_m.clicked.connect(cot_change)
-#Tabela.add_table_t.clicked.connect(add_dados)
-Tabela.delet_t.clicked.connect(table_delete)
+Tabela.delete_t.clicked.connect(table_delete)
 #Tabela.actionSalvar_no_Banco_de_Dados.triggered.connect(salvar_tudo)
 #Tabela.filtrar_t.clicked.connect(filtro)
 
