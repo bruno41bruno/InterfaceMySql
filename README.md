@@ -6,3 +6,5 @@ ele conversa com o banco de dados mas alguns comandos só pe possivel ver em sof
 
 acho que não vou conseguir o executavel dele meu computador tem algum diretorio faltando mas n consigo por nada,
 abra ele em um programa pythonque ele roda tranqulo so roda a __main__
+executavel criado so iniar a _main__.
+
